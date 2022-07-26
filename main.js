@@ -1,3 +1,5 @@
+// Dog Picture App
+
 let button1 = document.querySelector(".btn");
 let image = document.querySelector(".card-img-top");
 let url = 'https://dog.ceo/api/breeds/image/random';
@@ -14,9 +16,11 @@ button1.addEventListener('click', () => {
 
 
 
+// Weather App
 
 let form = document.querySelector("form");
-let textInput = document.querySelector("#textInput");
+let textInput = document.querySelector(".form-control" );
+let res = document.querySelector(".alert");
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -25,6 +29,7 @@ form.addEventListener('submit', (event) => {
     .then((response) => {
         return response.json();   
     }).then((data) => {
-
+        console.log(data)
+        res.innerText = `${data.description}, ${data.temperature}, ${data.wind}`;
     });
 })
