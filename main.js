@@ -1,11 +1,16 @@
-let dogContent = document.querySelector(".api-content");
+let button1 = document.querySelector(".btn");
+let image = document.querySelector(".card-img-top");
+let url = 'https://dog.ceo/api/breeds/image/random';
 
-
-
-
-
-
-
+button1.addEventListener('click', () => {
+    fetch(url)
+        .then((res) => {
+            return res.json();
+        })
+        .then((data) => {
+            image.src = data.message;
+        })
+})
 
 
 
@@ -20,6 +25,6 @@ form.addEventListener('submit', (event) => {
     .then((response) => {
         return response.json();   
     }).then((data) => {
-        
+
     });
 })
